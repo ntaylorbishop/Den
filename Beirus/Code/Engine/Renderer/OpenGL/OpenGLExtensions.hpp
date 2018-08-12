@@ -89,3 +89,5 @@ extern PFNGLENABLEIPROC						glEnablei;
 extern PFNGLDISABLEIPROC					glDisablei;
 extern PFNGLBLENDFUNCIPROC					glBlendFunci;
 extern PFNGLCLEARBUFFERFVPROC				glClearBufferfv;
+extern PFNGLBLENDEQUATIONPROC				glBlendEquation;
+extern PFNGLBLENDEQUATIONSEPARATEPROC		glBlendEquationSeparate;

@@ -63,6 +63,12 @@
     <Filter Include="Source\ParallaxCorrectedCubemaps">
       <UniqueIdentifier>{50063dfe-063e-4f51-a382-637bd2410803}</UniqueIdentifier>
     </Filter>
+    <Filter Include="IMGui">
+      <UniqueIdentifier>{0801b29b-99a8-49d7-a48a-16c47bbc111d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\UI">
+      <UniqueIdentifier>{5428adb7-af4c-4a6a-8ef7-f25c55ca5cea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TheApp.cpp">
@@ -113,6 +119,18 @@
     <ClCompile Include="ProbeManager.cpp">
       <Filter>Source\ParallaxCorrectedCubemaps</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\..\IMGui\imgui.cpp">
+      <Filter>IMGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\IMGui\imgui_demo.cpp">
+      <Filter>IMGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\IMGui\imgui_draw.cpp">
+      <Filter>IMGui</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\UI.cpp">
+      <Filter>Source\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TheApp.hpp">
@@ -159,6 +177,27 @@
     </ClInclude>
     <ClInclude Include="ProbeManager.hpp">
       <Filter>Source\ParallaxCorrectedCubemaps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\IMGui\imconfig.h">
+      <Filter>IMGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\IMGui\imgui.h">
+      <Filter>IMGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\IMGui\imgui_internal.h">
+      <Filter>IMGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\IMGui\stb_rect_pack.h">
+      <Filter>IMGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\IMGui\stb_textedit.h">
+      <Filter>IMGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\IMGui\stb_truetype.h">
+      <Filter>IMGui</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\UI.hpp">
+      <Filter>Source\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

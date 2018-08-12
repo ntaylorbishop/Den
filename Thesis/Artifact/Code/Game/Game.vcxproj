@@ -201,7 +201,7 @@
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)../../Beirus/Code/;$(SolutionDir)Code/;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../Beirus/Code/;$(SolutionDir)Code/;$(SolutionDir)../../../IMGui/</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -252,7 +252,7 @@
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)../../Beirus/Code/;$(SolutionDir)Code/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../Beirus/Code/;$(SolutionDir)Code/;$(SolutionDir)../../../IMGui/</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -307,7 +307,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)../../Beirus/Code/;$(SolutionDir)Code/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../Beirus/Code/;$(SolutionDir)Code/;$(SolutionDir)../../../IMGui/</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -360,7 +360,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)../../Beirus/Code/;$(SolutionDir)Code/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../Beirus/Code/;$(SolutionDir)Code/;$(SolutionDir)../../../IMGui/</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -378,6 +378,9 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\IMGui\imgui.cpp" />
+    <ClCompile Include="..\..\..\..\..\IMGui\imgui_demo.cpp" />
+    <ClCompile Include="..\..\..\..\..\IMGui\imgui_draw.cpp" />
     <ClCompile Include="DebugSceneTypes\DebugSceneType.cpp" />
     <ClCompile Include="DebugSceneTypes\SceneTypeDRP.cpp" />
     <ClCompile Include="DebugSceneTypes\SceneTypeForwardPlus.cpp" />
@@ -393,9 +396,16 @@
     <ClCompile Include="ShadowSphere.cpp" />
     <ClCompile Include="TheApp.cpp" />
     <ClCompile Include="TheGame.cpp" />
+    <ClCompile Include="UI\UI.cpp" />
     <ClCompile Include="WaterPlane.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\IMGui\imconfig.h" />
+    <ClInclude Include="..\..\..\..\..\IMGui\imgui.h" />
+    <ClInclude Include="..\..\..\..\..\IMGui\imgui_internal.h" />
+    <ClInclude Include="..\..\..\..\..\IMGui\stb_rect_pack.h" />
+    <ClInclude Include="..\..\..\..\..\IMGui\stb_textedit.h" />
+    <ClInclude Include="..\..\..\..\..\IMGui\stb_truetype.h" />
     <ClInclude Include="DebugSceneTypes\DebugSceneType.hpp" />
     <ClInclude Include="DebugSceneTypes\SceneTypeDRP.hpp" />
     <ClInclude Include="DebugSceneTypes\SceneTypeForwardPlus.hpp" />
@@ -410,6 +420,7 @@
     <ClInclude Include="ShadowSphere.hpp" />
     <ClInclude Include="TheApp.hpp" />
     <ClInclude Include="TheGame.hpp" />
+    <ClInclude Include="UI\UI.hpp" />
     <ClInclude Include="WaterPlane.hpp" />
   </ItemGroup>
   <ItemGroup>

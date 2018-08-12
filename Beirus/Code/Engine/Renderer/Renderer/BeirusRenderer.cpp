@@ -803,6 +803,8 @@ STATIC void BeirusRenderer::InitializeOpenGLDefinitions() {
 	glDisablei					= (PFNGLDISABLEIPROC)				wglGetProcAddress("glDisablei");
 	glBlendFunci				= (PFNGLBLENDFUNCIPROC)				wglGetProcAddress("glBlendFunci");
 	glClearBufferfv				= (PFNGLCLEARBUFFERFVPROC)			wglGetProcAddress("glClearBufferfv");
+	glBlendEquation				= (PFNGLBLENDEQUATIONPROC)			wglGetProcAddress("glBlendEquation");
+	glBlendEquationSeparate		= (PFNGLBLENDEQUATIONSEPARATEPROC)	wglGetProcAddress("glBlendEquationSeparate");
 }
 
 

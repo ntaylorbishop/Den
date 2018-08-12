@@ -82,3 +82,5 @@ PFNGLENABLEIPROC					glEnablei					= nullptr;
 PFNGLDISABLEIPROC					glDisablei					= nullptr;
 PFNGLBLENDFUNCIPROC					glBlendFunci				= nullptr;
 PFNGLCLEARBUFFERFVPROC				glClearBufferfv				= nullptr;
+PFNGLBLENDEQUATIONPROC				glBlendEquation				= nullptr;
+PFNGLBLENDEQUATIONSEPARATEPROC		glBlendEquationSeparate		= nullptr;

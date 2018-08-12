@@ -34,6 +34,9 @@
 #include "Engine/Scene/PickRay.hpp"
 #include "Game/ProbeManager.hpp"
 
+#include "imgui.h"
+#include "Game/UI/UI.hpp"
+
 class Light3D;
 class Model;
 
@@ -46,130 +49,6 @@ TheGame* TheGame::s_theGame = nullptr;
 
 //---------------------------------------------------------------------------------------------------------------------------
 STATIC void TheGame::Initialize() {
-
-
-	Vector3 envPos0  = Vector3(Randf(-100.f, 100.f), Randf(-100.f, 100.f), Randf(-100.f, 100.f));
-	Vector3 envPos1  = Vector3(Randf(-100.f, 100.f), Randf(-100.f, 100.f), Randf(-100.f, 100.f));
-	Vector3 envPos2  = Vector3(Randf(-100.f, 100.f), Randf(-100.f, 100.f), Randf(-100.f, 100.f));
-	Vector3 envPos3  = Vector3(Randf(-100.f, 100.f), Randf(-100.f, 100.f), Randf(-100.f, 100.f));
-	Vector3 envPos4  = Vector3(Randf(-100.f, 100.f), Randf(-100.f, 100.f), Randf(-100.f, 100.f));
-	Vector3 envPos5  = Vector3(Randf(-100.f, 100.f), Randf(-100.f, 100.f), Randf(-100.f, 100.f));
-	Vector3 envPos6  = Vector3(Randf(-100.f, 100.f), Randf(-100.f, 100.f), Randf(-100.f, 100.f));
-	Vector3 envPos7  = Vector3(Randf(-100.f, 100.f), Randf(-100.f, 100.f), Randf(-100.f, 100.f));
-	Vector3 envPos8  = Vector3(Randf(-100.f, 100.f), Randf(-100.f, 100.f), Randf(-100.f, 100.f));
-	Vector3 envPos9  = Vector3(Randf(-100.f, 100.f), Randf(-100.f, 100.f), Randf(-100.f, 100.f));
-	Vector3 envPos10 = Vector3(Randf(-100.f, 100.f), Randf(-100.f, 100.f), Randf(-100.f, 100.f));
-	Vector3 envPos11 = Vector3(Randf(-100.f, 100.f), Randf(-100.f, 100.f), Randf(-100.f, 100.f));
-	Vector3 envPos12 = Vector3(Randf(-100.f, 100.f), Randf(-100.f, 100.f), Randf(-100.f, 100.f));
-	Vector3 envPos13 = Vector3(Randf(-100.f, 100.f), Randf(-100.f, 100.f), Randf(-100.f, 100.f));
-	Vector3 envPos14 = Vector3(Randf(-100.f, 100.f), Randf(-100.f, 100.f), Randf(-100.f, 100.f));
-	Vector3 envPos15 = Vector3(Randf(-100.f, 100.f), Randf(-100.f, 100.f), Randf(-100.f, 100.f));
-	Vector3 passPosition = Vector3(39.f, 24.f, 9.f);
-
-	uint envMapCount = 16;
-
-	uint	idx = 0;
-	float	smallestDist = 0.f;
-	float	nextDist = 0.f;
-
-	smallestDist = (envPos0 - passPosition).Length();
-
-	nextDist = (envPos1 - passPosition).Length();
-	if (envMapCount >= 2 && nextDist < smallestDist) {
-		idx = 1;
-		smallestDist = nextDist;
-	}
-
-	nextDist = (envPos2 - passPosition).Length();
-	if (envMapCount >= 3 && nextDist < smallestDist) {
-		idx = 2;
-		smallestDist = nextDist;
-	}
-
-	nextDist = (envPos3 - passPosition).Length();
-	if (envMapCount >= 4 && nextDist < smallestDist) {
-		idx = 3;
-		smallestDist = nextDist;
-	}
-
-	nextDist = (envPos4 - passPosition).Length();
-	if (envMapCount >= 5 && nextDist < smallestDist) {
-		idx = 4;
-		smallestDist = nextDist;
-	}
-
-	nextDist = (envPos5 - passPosition).Length();
-	if (envMapCount >= 6 && nextDist < smallestDist) {
-		idx = 5;
-		smallestDist = nextDist;
-	}
-
-	nextDist = (envPos6 - passPosition).Length();
-	if (envMapCount >= 7 && nextDist < smallestDist) {
-		idx = 6;
-		smallestDist = nextDist;
-	}
-
-	nextDist = (envPos7 - passPosition).Length();
-	if (envMapCount >= 8 && nextDist < smallestDist) {
-		idx = 7;
-		smallestDist = nextDist;
-	}
-
-	nextDist = (envPos8 - passPosition).Length();
-	if (envMapCount >= 9 && nextDist < smallestDist) {
-		idx = 8;
-		smallestDist = nextDist;
-	}
-
-	nextDist = (envPos9 - passPosition).Length();
-	if (envMapCount >= 10 && nextDist < smallestDist) {
-		idx = 9;
-		smallestDist = nextDist;
-	}
-
-	nextDist = (envPos10 - passPosition).Length();
-	if (envMapCount >= 11 && nextDist < smallestDist) {
-		idx = 10;
-		smallestDist = nextDist;
-	}
-
-	nextDist = (envPos11 - passPosition).Length();
-	if (envMapCount >= 12 && nextDist < smallestDist) {
-		idx = 11;
-		smallestDist = nextDist;
-	}
-
-	nextDist = (envPos12 - passPosition).Length();
-	if (envMapCount >= 13 && nextDist < smallestDist) {
-		idx = 12;
-		smallestDist = nextDist;
-	}
-
-	nextDist = (envPos13 - passPosition).Length();
-	if (envMapCount >= 14 && nextDist < smallestDist) {
-		idx = 13;
-		smallestDist = nextDist;
-	}
-
-	nextDist = (envPos14 - passPosition).Length();
-	if (envMapCount >= 15 && nextDist < smallestDist) {
-		idx = 14;
-		smallestDist = nextDist;
-	}
-
-	nextDist = (envPos15 - passPosition).Length();
-	if (envMapCount >= 16 && nextDist < smallestDist) {
-		idx = 15;
-		smallestDist = nextDist;
-	}
-
-
-
-
-
-
-
 
 	s_theGame = new TheGame();
 	BeirusEngine::RegisterUpdateCallback(MakeDelegate(s_theGame, &TheGame::Update));
@@ -190,45 +69,17 @@ STATIC void TheGame::Initialize() {
 	Console::RegisterCommand("exp",					"Sets exposure of the scene.",						&TheGame::SetExposure);
 
 
-/*
-	Texture* diffuseTex = Texture::CreateOrGetTexture("Data/Textures/Black.png");
-	Texture* normTex = Texture::CreateOrGetTexture("Data/Textures/Black_Normal.png");
-
-	s_theGame->m_plane1 = new Model(IMESH_POS, PRIMITIVE_MESH_QUAD);
-	s_theGame->m_plane1->SetShadowCaster(false);
-
-	s_theGame->m_plane1->m_material = new Material("Unlit");
-	s_theGame->m_plane1->m_material->CreateUniform("gVertColor", UNIFORM_RGBA, 1, &s_theGame->m_color1);
-
-	s_theGame->m_plane1->m_material->CreateUniform("gTexDiffuse", UNIFORM_TEXTURE2D, 1, 0, diffuseTex);
-	s_theGame->m_plane1->m_material->CreateUniform("gTexNormal", UNIFORM_TEXTURE2D, 1, 1, normTex);
-	s_theGame->m_plane1->m_material->CreateUniform("gDiffuseColor", UNIFORM_RGBA, 1, &s_theGame->m_color1);
-	s_theGame->m_plane1->m_material->CreateUniform("gUsesDiffuseTex", UNIFORM_UINT, 1, &UINT_FALSE);
-
-	s_theGame->m_plane1->m_material->m_renderState.m_backfaceCulling = false;
-	s_theGame->m_plane1->m_renderState.m_blendMode = BLEND_MODE_TRANSPARENT_DEFAULT;
-
-	TheGame::GetScene()->AddStaticMesh(s_theGame->m_plane1);
 
 
-	s_theGame->m_plane2 = new Model(IMESH_POS, PRIMITIVE_MESH_QUAD);
-	s_theGame->m_plane2->SetShadowCaster(false);
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	ImGuiIO& io = ImGui::GetIO();
+	(void)io;
 
-	s_theGame->m_plane2->m_material = new Material("Unlit");
-	s_theGame->m_plane2->m_material->CreateUniform("gVertColor", UNIFORM_RGBA, 1, &s_theGame->m_color2);
-
-	s_theGame->m_plane2->m_material->CreateUniform("gTexDiffuse", UNIFORM_TEXTURE2D, 1, 0, diffuseTex);
-	s_theGame->m_plane2->m_material->CreateUniform("gTexNormal", UNIFORM_TEXTURE2D, 1, 1, normTex);
-	s_theGame->m_plane2->m_material->CreateUniform("gDiffuseColor", UNIFORM_RGBA, 1, &s_theGame->m_color2);
-	s_theGame->m_plane2->m_material->CreateUniform("gUsesDiffuseTex", UNIFORM_UINT, 1, &UINT_FALSE);
-
-	s_theGame->m_plane2->m_material->m_renderState.m_backfaceCulling = false;
-	s_theGame->m_plane2->m_renderState.m_blendMode = BLEND_MODE_TRANSPARENT_DEFAULT;
-
-	s_theGame->m_plane2->m_model.MatrixMakeRotationEuler(90.f, 90.f, 0.f);
-
-	TheGame::GetScene()->AddStaticMesh(s_theGame->m_plane2);*/
-
+	// Setup style
+	ImGui::StyleColorsDark();
+	bool show_demo_window = true;
+	ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 }
 
 
@@ -245,6 +96,35 @@ STATIC void TheGame::Shutdown() {
 //---------------------------------------------------------------------------------------------------------------------------
 STATIC void TheGame::Render() {
 	s_theGame->InternalRender();
+
+
+
+	ImGui::NewFrame();
+	ImGui::ShowDemoWindow(&show_demo_window);
+
+	static float f = 0.0f;
+	static int counter = 0;
+
+	ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
+
+	ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
+	ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
+	ImGui::Checkbox("Another Window", &show_another_window);
+
+	ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f    
+	ImGui::ColorEdit3("clear color", (float*)&clear_color); // Edit 3 floats representing a color
+
+	if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
+		counter++;
+	ImGui::SameLine();
+	ImGui::Text("counter = %d", counter);
+
+	ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+	ImGui::End();
+
+	// Rendering
+	ImGui::Render();
+	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
 
 
